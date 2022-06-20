@@ -14,11 +14,17 @@
 
 3) With reference to the specification, test the temperature conversion endpoint by sending a HTTP GET request with the following parameters:
 - Celcius to Fahrenheit: http://localhost:8080/conversion/temperature?from=CELCIUS&to=FAHRENHEIT&value=0
-  - Response should include a 'value' of '32' with 'unit' of 'FAHRENHEIT'
+  - Response should include a 'value' of '32.0' with 'unit' of 'FAHRENHEIT'
 - Fahrenheit to Celcius: http://localhost:8080/conversion/temperature?from=FAHRENHEIT&to=CELCIUS&value=32
-  - Response should include a 'value' of '0' with 'unit' of 'CELCIUS'
+  - Response should include a 'value' of '0.0' with 'unit' of 'CELCIUS'
+- Exception Handling:
+  - Missing Argument: http://localhost:8080/conversion/temperature?from=FAHRENHEIT&to=CELCIUS
+    - Response should return a JSON formatted Error model with a HTTP status code of 400 (BAD REQUEST)
+  - Invalid Argument: http://localhost:8080/conversion/temperature?from=FAHRENHEIT&to=CELCIUS&value=a
+    - Response should return a JSON formatted Error model with a HTTP status of 400 (BAD REQUEST)
 
-4) Alternatively, you can test a live deployment of the application by replacing 'localhost' with '34.71.20.158' and '8080' with '80' (or removing the port entirely)
+4) Alternatively, you can test a live deployment of the application by replacing 'localhost' with '34.71.20.158' and '8080' with '80'
+- e.g. curl "http://34.71.20.158:80/conversion/temperature?from=CELCIUS&to=FAHRENHEIT&value=0"
 
 ## Design and Implementation
 - 
