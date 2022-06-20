@@ -8,4 +8,4 @@
 
 2) Open a browser and visit:
 - Swagger UI: http://localhost:8080/swagger-ui/index.html
-- - To analyse the API specification and understand details regarding endpoints and operations exposed by the application
+  - To analyse the API specification and understand details regarding endpoints and operations exposed by the application
