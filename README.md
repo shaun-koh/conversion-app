@@ -27,4 +27,8 @@
   - e.g. curl "http://34.71.20.158:80/conversion/temperature?from=CELCIUS&to=FAHRENHEIT&value=0"
 
 ## Design and Implementation
+- Tools and framework
+- API urls, parameters, data formats
+- Limitations
+- Distribution, scalability, security (containerisation and orchestration)
 - 
