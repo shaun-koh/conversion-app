@@ -36,7 +36,7 @@ public class ConversionControllerTest {
 
         Mockito.when(conversionService.processTemperatureConversion(from, to, value)).thenReturn(conversionResponse);
 
-        mockMvc.perform(MockMvcRequestBuilders.get("/temperature")
+        mockMvc.perform(MockMvcRequestBuilders.get("/conversion/temperature")
                         .queryParam("from", from.name())
                         .queryParam("to", to.name())
                         .queryParam("value", Double.toString(value)))
@@ -54,7 +54,7 @@ public class ConversionControllerTest {
 
         int expectedStatusCode = HttpStatus.BAD_REQUEST.value();
 
-        mockMvc.perform(MockMvcRequestBuilders.get("/temperature")
+        mockMvc.perform(MockMvcRequestBuilders.get("/conversion/temperature")
                         .queryParam("from", from.name())
                         .queryParam("to", to.name())
                         .queryParam("value", value))
@@ -71,7 +71,7 @@ public class ConversionControllerTest {
         int expectedStatusCode = HttpStatus.BAD_REQUEST.value();
         String expectedMessage = "Required request parameter 'value' for method parameter type double is not present";
 
-        mockMvc.perform(MockMvcRequestBuilders.get("/temperature")
+        mockMvc.perform(MockMvcRequestBuilders.get("/conversion/temperature")
                         .queryParam("from", from.name())
                         .queryParam("to", to.name()))
                 .andExpect(MockMvcResultMatchers.status().isBadRequest())
@@ -90,7 +90,7 @@ public class ConversionControllerTest {
 
         int expectedStatusCode = HttpStatus.INTERNAL_SERVER_ERROR.value();
 
-        mockMvc.perform(MockMvcRequestBuilders.get("/temperature")
+        mockMvc.perform(MockMvcRequestBuilders.get("/conversion/temperature")
                         .queryParam("from", from.name())
                         .queryParam("to", to.name())
                         .queryParam("value", Double.toString(value)))
