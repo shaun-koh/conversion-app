@@ -51,6 +51,7 @@
   - Data Type
     - Strings are used for alphanumeric values where possible
     - Double is used for the 'value' fields as temperature can have significant figures / decimal places and to preserve conversion accuracy
+    - Enum is used to restrict the units of measurement to optimise validation at request binding and to set expectation / avoid ambiguity on the API specification / contract
   - Error / Exception
     - A JSON formatted model was chosen to ensure responses containing known errors / exceptions were RESTful
 - Implementation
