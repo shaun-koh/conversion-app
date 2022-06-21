@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.*;
 @Validated
 @ResponseBody
 public class ConversionController {
-
     private final ConversionService conversionService;
 
     public ConversionController(ConversionService conversionService) {
@@ -29,5 +28,3 @@ public class ConversionController {
         return new ResponseEntity<>(conversionResponse, HttpStatus.OK);
     }
 }
-
-
